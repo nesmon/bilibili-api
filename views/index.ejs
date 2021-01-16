@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <img id="img" alt="">
+    <script>
+      let option = {
+        method: 'GET',
+        headers: new Headers(),
+        mode: 'no-cors'
+      };
+
+      (async() => {
+        const res = await fetch('/api/bilibili', option);
+        const data = await res.json()
+
+        console.log(data.data)
+        document.getElementById("img").setAttribute('src', data.data)
+      })()
+    </script>
+  </body>
+</html>
