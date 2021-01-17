@@ -12,7 +12,7 @@ router.get('/bilibili', async function(req, res, next) {
   console.log(`Loading a total of ${evtFiles.length} bilibili picture.`);
 
   res.send(JSON.stringify({
-    data : "bilibili/" + evtFiles[Math.floor(Math.random() * Math.floor(evtFiles.length))]
+    data : "http://localhost:3000/bilibili/" + evtFiles[Math.floor(Math.random() * Math.floor(evtFiles.length))]
   }));
 });
 

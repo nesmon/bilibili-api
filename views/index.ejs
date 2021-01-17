@@ -3,10 +3,11 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="image">
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to <%= title %> a random api that just give a Toaru Picture</p>
     <img id="img" alt="">
     <script>
       let option = {
@@ -21,6 +22,7 @@
 
         console.log(data.data)
         document.getElementById("img").setAttribute('src', data.data)
+        document.querySelector('meta[name="image"]').setAttribute("content", data.data);
       })()
     </script>
   </body>
